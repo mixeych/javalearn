@@ -6,7 +6,13 @@ import java.util.List;
 
 public class BandSimpleDAO implements BandDAO {
 private final List<Band> bands = new ArrayList<Band>();
-    
+
+    public BandSimpleDAO(){
+        addBand(new Band("NoizeMC", "Ivan Alekseev", 4));
+        addBand(new Band("Rammstein", "Till Lindemann", 5));
+        addBand(new Band("Metallica", "James Hatfield", 4));
+    }
+
     @Override
     public Long addBand(Band band) {
         Long id = generateBandId();
@@ -21,8 +27,8 @@ private final List<Band> bands = new ArrayList<Band>();
         Band oldBand = getBand(band.getId());
         if(oldBand != null) {
         	oldBand.setName(band.getName());
-        	oldBand.setPhone(band.getPhone());
-        	oldBand.setEmail(band.getEmail());
+        	oldBand.setMainStar(band.getMainStar());
+        	oldBand.setMembersNumber(band.getMembersNumber());
         }
     }
  

@@ -6,24 +6,24 @@ class Band {
 
     private String name;
     
-    private String phone;
+    private String mainStar;
 
-    private String email;
+    private int membersNumber;
  
     public Band() {
     }
  
-    public Band(String name, String phone, String email) {
+    public Band(String name, String mainStar, int membersNumber) {
         this.name = name;
-        this.phone = phone;
-        this.email = email;
+        this.mainStar = mainStar;
+        this.membersNumber = membersNumber;
     }
     
-    public Band(Long id, String name, String phone, String email) {
+    public Band(Long id, String name, String mainStar, int membersNumber) {
         this.id = id;
         this.name = name;
-        this.phone = phone;
-        this.email = email;
+        this.mainStar = mainStar;
+        this.membersNumber = membersNumber;
     }
  
     public Long getId() {
@@ -42,24 +42,24 @@ class Band {
         this.name = name;
     }
  
-    public String getPhone() {
-        return phone;
+    public String getMainStar() {
+        return mainStar;
     }
  
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setMainStar(String mainStar) {
+        this.mainStar = mainStar;
     }
  
-    public String getEmail() {
-        return email;
+    public int getMembersNumber() {
+        return membersNumber;
     }
  
-    public void setEmail(String email) {
-        this.email = email;
+    public void setMembersNumber(int membersNumber) {
+        this.membersNumber = membersNumber;
     }
  
     @Override
     public String toString() {
-        return "Band{" + "id=" + id + ", name=" + name + ", phone=" + phone + ", email=" + email + '}';
+        return "Band{" + "id=" + id + ", name=" + name + ", mainStar=" + mainStar + ", membersNumber=" + membersNumber + '}';
     }
 }
