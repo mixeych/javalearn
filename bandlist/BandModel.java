@@ -7,12 +7,17 @@ import java.util.List;
  */
 public class BandModel extends AbstractTableModel {
     // Список загловков для колонок в таблице
-    private static final String[] headers = {"ID", "Название", "Лидер", "Кол-во участников"};
+    private static final String[] headers = new String[4];
 
     // Здесь мы храним список контактов, которые будем отображать в таблице
     private final List<Band> bands;
 
     public BandModel(List<Band> bands) {
+        Localize locale = Localize.getInstance("en_US");
+        headers[0] = "ID";
+        headers[1] = locale.getField("main.field.name");
+        headers[2] = locale.getField("main.field.star");
+        headers[3] = locale.getField("main.field.count");
         this.bands = bands;
     }
 

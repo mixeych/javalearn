@@ -50,10 +50,11 @@ public class BandFrame extends JFrame implements ActionListener {
         // усанавливаем у него layout
         btnPanel.setLayout(gridbag);
         // Создаем кнопки
-        btnPanel.add(createButton(gridbag, gbc, "Обновить", LOAD));
-        btnPanel.add(createButton(gridbag, gbc, "Добавить", ADD));
-        btnPanel.add(createButton(gridbag, gbc, "Исправить", EDIT));
-        btnPanel.add(createButton(gridbag, gbc, "Удалить", DELETE));
+        Localize locale = Localize.getInstance();
+        btnPanel.add(createButton(gridbag, gbc, locale.getField("main.button.update"), LOAD));
+        btnPanel.add(createButton(gridbag, gbc, locale.getField("main.button.add"), ADD));
+        btnPanel.add(createButton(gridbag, gbc, locale.getField("main.button.edit"), EDIT));
+        btnPanel.add(createButton(gridbag, gbc, locale.getField("main.button.delete"), DELETE));
 
         // Создаем панель для левой колокни с кнопками
         JPanel left = new JPanel();
@@ -62,7 +63,7 @@ public class BandFrame extends JFrame implements ActionListener {
         // Кладем панель с кнопками в верхнюю часть
         left.add(btnPanel, BorderLayout.NORTH);
         // Кладем панель для левой колонки на форму слева - WEST
-        add(left, BorderLayout.WEST);
+        add(left, BorderLayout.EAST);
 
         // Кладем панель со скролингом, внутри которой нахоится наша таблица
         // Теперь таблица может скроллироваться

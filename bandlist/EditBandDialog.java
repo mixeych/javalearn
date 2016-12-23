@@ -67,8 +67,9 @@ public class EditBandDialog extends JDialog implements ActionListener
 
     // Размещаем метки и поля ввода на форме
     private void buildFields() {
+        Localize locale = Localize.getInstance("en_US");
         // Набор метки и поля для Имени
-        JLabel lblName = new JLabel("Имя:");
+        JLabel lblName = new JLabel(locale.getField("main.field.name"));
         // Выравнивание текста с правой стороны
         lblName.setHorizontalAlignment(SwingConstants.RIGHT);
         // Выставляем координаты метки
@@ -82,7 +83,7 @@ public class EditBandDialog extends JDialog implements ActionListener
         // Кладем поле на форму
         add(name);
 
-        JLabel lblMainStar = new JLabel("Лидер:");
+        JLabel lblMainStar = new JLabel(locale.getField("main.field.star"));
         lblMainStar.setHorizontalAlignment(SwingConstants.RIGHT);
         lblMainStar.setBounds(new Rectangle(PAD, 2 * H_B + PAD, W_L, H_B));
         add(lblMainStar);
@@ -91,7 +92,7 @@ public class EditBandDialog extends JDialog implements ActionListener
         add(mainStar);
 
         // Набор метки и поля для Email
-        JLabel lblMembersNumber = new JLabel("Кол-во участников:");
+        JLabel lblMembersNumber = new JLabel(locale.getField("main.field.count"));
         lblMembersNumber.setHorizontalAlignment(SwingConstants.RIGHT);
         lblMembersNumber.setBounds(new Rectangle(PAD, 3 * H_B + PAD, W_L, H_B));
         add(lblMembersNumber);
@@ -112,13 +113,16 @@ public class EditBandDialog extends JDialog implements ActionListener
 
     // Размещаем кнопки на форме
     private void buildButtons() {
-        JButton btnSave = new JButton("SAVE");
+        Localize locale = Localize.getInstance("en");
+        String saveText = locale.getField("dialog.button.save");
+        JButton btnSave = new JButton(saveText);
         btnSave.setActionCommand(SAVE);
         btnSave.addActionListener(this);
         btnSave.setBounds(new Rectangle(PAD, 5 * H_B + PAD, W_B, H_B));
         add(btnSave);
 
-        JButton btnCancel = new JButton("CANCEL");
+        String cancelText = locale.getField("dialog.button.cancel");
+        JButton btnCancel = new JButton(cancelText);
         btnCancel.setActionCommand(CANCEL);
         btnCancel.addActionListener(this);
         btnCancel.setBounds(new Rectangle(W_B + 2 * PAD, 5 * H_B + PAD, W_B, H_B));
